@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iPhone Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="phone">
+
+  <div class="status">
+    <span id="clock">9:41</span>
+    <span>●●●  WiFi  <span id="battery">100%</span></span>
+  </div>
+
+  <section id="boot" class="screen boot">
+    <div class="apple">●</div>
+    <p>Starting iPhone...</p>
+    <div class="loader"></div>
+  </section>
+
+  <section id="lock" class="screen lock hidden">
+    <div class="date" id="date"></div>
+    <div class="big-time" id="lockTime">9:41</div>
+    <p>Enter Passcode</p>
+    <div class="dots" id="dots">○ ○ ○ ○</div>
+    <div class="keypad">
+      <button onclick="key('1')">1</button>
+      <button onclick="key('2')">2</button>
+      <button onclick="key('3')">3</button>
+      <button onclick="key('4')">4</button>
+      <button onclick="key('5')">5</button>
+      <button onclick="key('6')">6</button>
+      <button onclick="key('7')">7</button>
+      <button onclick="key('8')">8</button>
+      <button onclick="key('9')">9</button>
+      <button class="blank"></button>
+      <button onclick="key('0')">0</button>
+      <button onclick="erase()">⌫</button>
+    </div>
+    <p id="error"></p>
+    <small>Default passcode: 1234</small>
+  </section>
+
+  <section id="home" class="screen home hidden">
+    <div class="welcome">
+      <h2 id="homeTime">9:41</h2>
+      <p id="homeDate"></p>
+    </div>
+
+    <div class="apps">
+      <button class="app" onclick="openApp('Photos')">
+        <span class="app-icon photos">🌈</span>Photos
+      </button>
+      <button class="app" onclick="openApp('Notes')">
+        <span class="app-icon notes">📝</span>Notes
+      </button>
+      <button class="app" onclick="openApp('Safari')">
+        <span class="app-icon safari">🧭</span>Safari
+      </button>
+      <button class="app" onclick="openApp('Settings')">
+        <span class="app-icon settings">⚙️</span>Settings
+      </button>
+      <button class="app" onclick="openApp('Music')">
+        <span class="app-icon music">🎵</span>Music
+      </button>
+    </div>
+
+    <div class="dock">
+      <button onclick="openApp('Phone')">📞</button>
+      <button onclick="openApp('Messages')">💬</button>
+      <button onclick="openApp('Safari')">🧭</button>
+      <button onclick="openApp('Settings')">⚙️</button>
+    </div>
+  </section>
+
+  <section id="appScreen" class="screen app-screen hidden">
+    <div class="app-header">
+      <button onclick="goHome()">‹ Home</button>
+      <b id="appTitle">App</b>
+      <button onclick="powerMenu()">⋯</button>
+    </div>
+    <div id="appContent" class="app-content"></div>
+  </section>
+
+  <section id="power" class="screen power hidden">
+    <h2>Power Menu</h2>
+    <button onclick="restart()">↻ Restart</button>
+    <button onclick="shutdown()">⏻ Shut Down</button>
+    <button onclick="closePower()">Cancel</button>
+  </section>
+
+  <div class="home-indicator" onclick="goHome()"></div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
